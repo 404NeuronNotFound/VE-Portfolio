@@ -44,7 +44,7 @@
   --shadow-lg: 0 8px 30px rgba(0,0,0,0.5);
   --navbar-bg: rgba(9, 9, 11, 0.8);
   --footer-border: #27272a;
-  --marquee-fade: linear-gradient(90deg, #09090b, transparent 5%, transparent 95%, #09090b);
+  --marquee-fade: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   --color-scheme: dark;
 }
 
@@ -83,7 +83,7 @@
   --shadow-lg: 0 8px 30px rgba(0,0,0,0.1);
   --navbar-bg: rgba(255, 255, 255, 0.8);
   --footer-border: #e4e4e7;
-  --marquee-fade: linear-gradient(90deg, #ffffff, transparent 5%, transparent 95%, #ffffff);
+  --marquee-fade: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   --color-scheme: light;
 }
 
