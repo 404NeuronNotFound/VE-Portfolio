@@ -1,0 +1,74 @@
+.footer {
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--footer-border);
+}
+
+.footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.footer__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer__brand p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-top: 0.35rem;
+}
+
+.footer__logo {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.02em;
+}
+
+.footer__links {
+    display: flex;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+}
+
+.footer__links button {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.3rem 0.75rem;
+    border-radius: 8px;
+    transition: color 0.2s, background 0.2s;
+}
+
+.footer__links button:hover {
+    color: var(--text);
+    background: var(--surface-hover);
+}
+
+.footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--footer-border);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.footer__bottom a {
+    color: var(--text-secondary);
+    transition: color 0.2s;
+}
+
+.footer__bottom a:hover {
+    color: var(--text);
+}

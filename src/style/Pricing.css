@@ -1,0 +1,203 @@
+.pricing {
+    padding: 5rem 2rem;
+}
+
+.pricing__inner {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+/* ── Header ── */
+.pricing__header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.pricing__title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+}
+
+.pricing__sub {
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+/* ── Grid ── */
+.pricing__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+/* ── Card ── */
+.pricing__card {
+    position: relative;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.pricing__card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.pricing__card--featured {
+    border-color: var(--text-muted);
+}
+
+.pricing__card--featured:hover {
+    border-color: var(--text-secondary);
+}
+
+/* ── Badge ── */
+.pricing__badge {
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 1rem;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+/* ── Card top ── */
+.pricing__card-top {
+    margin-bottom: 1.5rem;
+}
+
+.pricing__name {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text);
+    margin: 0 0 0.5rem 0;
+}
+
+.pricing__desc {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ── Price ── */
+.pricing__price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.3rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.pricing__price {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.04em;
+    line-height: 1;
+}
+
+.pricing__period {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* ── Features ── */
+.pricing__features {
+    list-style: none;
+    margin: 0 0 2rem 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.pricing__feature {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.pricing__feature svg {
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+
+/* ── CTA Button ── */
+.pricing__btn {
+    display: block;
+    text-align: center;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--border);
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    margin-top: auto;
+}
+
+.pricing__btn:hover {
+    background: var(--surface-hover);
+    transform: translateY(-1px);
+}
+
+.pricing__btn--accent {
+    color: var(--btn-primary-text);
+    background: var(--btn-primary-bg);
+    border: none;
+}
+
+.pricing__btn--accent:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ── Footnote ── */
+.pricing__note {
+    text-align: center;
+    margin-top: 2.5rem;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.pricing__note a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.pricing__note a:hover {
+    opacity: 0.7;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+    .pricing__grid {
+        grid-template-columns: 1fr;
+    }
+}
