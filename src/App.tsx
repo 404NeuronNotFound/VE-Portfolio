@@ -1,7 +1,6 @@
 import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
 import Tools from './components/Tools';
 import Work from './components/Work';
 import Pricing from './components/Pricing';
@@ -15,7 +14,6 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <About />
         <Tools />
         <Work />
         <Pricing />

@@ -1,42 +1,24 @@
-import { useEffect, useRef } from 'react';
 import '../style/Hero.css';
 
 export default function Hero() {
-    const sectionRef = useRef<HTMLElement>(null);
-
-    useEffect(() => {
-        const el = sectionRef.current;
-        if (!el) return;
-        const children = el.querySelectorAll('.hero__animate');
-        children.forEach((child, i) => {
-            const htmlChild = child as HTMLElement;
-            htmlChild.style.opacity = '0';
-            htmlChild.style.transform = 'translateY(24px)';
-            setTimeout(() => {
-                htmlChild.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
-                htmlChild.style.opacity = '1';
-                htmlChild.style.transform = 'translateY(0)';
-            }, 100 + i * 120);
-        });
-    }, []);
-
     const scrollTo = (id: string) =>
         document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
     return (
-        <section className="hero" ref={sectionRef}>
+        <section className="hero">
             <div className="hero__content">
                 <div className="hero__text">
-                    <h1 className="hero__title hero__animate">
+                    <h1 className="hero__title">
                         Short-Form Video Editor | Content That Converts
                     </h1>
-                    <p className="hero__sub hero__animate">
+                    <p className="hero__sub">
                         I craft cinematic, scroll-stopping short-form content — Reels, TikToks,
                         YouTube Shorts — that turn viewers into followers and followers into clients.
-                        I develop engaging, retention-focused edits using modern editing tools and creative storytelling.
+                        I develop engaging, retention-focused edits using modern editing tools and
+                        creative storytelling.
                     </p>
 
-                    <div className="hero__actions hero__animate">
+                    <div className="hero__actions">
                         <a
                             href="mailto:keybeen.videoeditor@gmail.com?subject=Video Editing Inquiry"
                             className="hero__btn hero__btn--primary"
@@ -67,6 +49,66 @@ export default function Hero() {
                                 <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
                             </svg>
                         </a>
+                    </div>
+                </div>
+
+                {/* ── 3 Service Cards (inside hero) ── */}
+                <div className="hero__services">
+                    <div className="hero__svc-card">
+                        <div className="hero__svc-visual">
+                            <div className="hero__svc-info-block">
+                                <span className="hero__svc-info-dot" style={{ background: '#ef4444' }} />
+                                <div>
+                                    <strong>Hook Optimization</strong>
+                                    <span>Grab attention in the first 3 seconds with dynamic hooks and pattern interrupts.</span>
+                                </div>
+                            </div>
+                            <div className="hero__svc-info-block">
+                                <span className="hero__svc-info-dot" style={{ background: '#22c55e' }} />
+                                <div>
+                                    <strong>Retention Editing</strong>
+                                    <span>Keep viewers watching with pacing, zooms, and beat-synced cuts.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 className="hero__svc-title">Short-Form Editing</h3>
+                        <p className="hero__svc-desc">
+                            Crafting scroll-stopping Reels, TikToks, and YouTube Shorts with cinematic pacing and dynamic transitions.
+                        </p>
+                    </div>
+
+                    <div className="hero__svc-card">
+                        <div className="hero__svc-visual hero__svc-visual--color">
+                            <div className="hero__svc-color-row">
+                                <div className="hero__svc-swatch" style={{ background: 'linear-gradient(135deg, #f97316, #ef4444)' }} />
+                                <div className="hero__svc-swatch" style={{ background: 'linear-gradient(135deg, #8b5cf6, #6366f1)' }} />
+                                <div className="hero__svc-swatch" style={{ background: 'linear-gradient(135deg, #06b6d4, #3b82f6)' }} />
+                            </div>
+                            <div className="hero__svc-color-row">
+                                <div className="hero__svc-swatch" style={{ background: 'linear-gradient(135deg, #22c55e, #10b981)' }} />
+                                <div className="hero__svc-swatch" style={{ background: 'linear-gradient(135deg, #f59e0b, #eab308)' }} />
+                                <div className="hero__svc-swatch" style={{ background: 'linear-gradient(135deg, #ec4899, #f43f5e)' }} />
+                            </div>
+                        </div>
+                        <h3 className="hero__svc-title">Color Grading</h3>
+                        <p className="hero__svc-desc">
+                            Professional color correction and cinematic grading. Custom LUTs, film-inspired looks, and brand-consistent palettes.
+                        </p>
+                    </div>
+
+                    <div className="hero__svc-card">
+                        <div className="hero__svc-visual hero__svc-visual--motion">
+                            <div className="hero__svc-motion-grid">
+                                <div className="hero__svc-motion-pill">Kinetic Typography</div>
+                                <div className="hero__svc-motion-pill">Animated Overlays</div>
+                                <div className="hero__svc-motion-pill">Smooth Transitions</div>
+                                <div className="hero__svc-motion-pill">Custom Effects</div>
+                            </div>
+                        </div>
+                        <h3 className="hero__svc-title">Motion Graphics</h3>
+                        <p className="hero__svc-desc">
+                            Eye-catching animated text, custom transitions, kinetic typography, and effects that elevate your content.
+                        </p>
                     </div>
                 </div>
             </div>
