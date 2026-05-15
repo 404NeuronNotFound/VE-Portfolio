@@ -1,5 +1,5 @@
 .hero {
-    padding: 6rem 2rem 3rem;
+    padding: 10rem 2rem 3rem;
 }
 
 .hero__content {
@@ -281,7 +281,7 @@
 
 @media (max-width: 768px) {
     .hero {
-        padding: 5.5rem 1.5rem 2rem;
+        padding: 9rem 1.5rem 2rem;
     }
 
     .hero__title {
