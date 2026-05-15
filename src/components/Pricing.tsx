@@ -35,6 +35,22 @@ const plans = [
             'Custom intro/outro templates',
         ],
     },
+    {
+        name: 'Custom',
+        price: '',
+        period: '',
+        desc: 'Have a unique project in mind? Let\'s have a conversation first and build a package that fits your needs.',
+        featured: false,
+        cta: 'Let\'s Talk',
+        features: [
+            'Custom scope & deliverables',
+            'Flexible timeline',
+            'Long-form / commercial edits',
+            'Brand packages & bundles',
+            'Dedicated support',
+            'Contract-based agreement',
+        ],
+    },
 ];
 
 export default function Pricing() {
@@ -59,8 +75,14 @@ export default function Pricing() {
                             </div>
 
                             <div className="pricing__price-row">
-                                <span className="pricing__price">{plan.price}</span>
-                                <span className="pricing__period">/{plan.period}</span>
+                                {plan.price ? (
+                                    <>
+                                        <span className="pricing__price">{plan.price}</span>
+                                        <span className="pricing__period">/{plan.period}</span>
+                                    </>
+                                ) : (
+                                    <span className="pricing__price pricing__price--talk">Let's Talk</span>
+                                )}
                             </div>
 
                             <ul className="pricing__features">
