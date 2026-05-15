@@ -7,7 +7,7 @@ export default function Footer() {
                 <div className="footer__top">
                     <div className="footer__brand">
                         <span className="footer__logo">Keybeen</span>
-                        <p>Short-form video editing that converts.</p>
+                        <p>Creative and cinematic video editing for creators, brands, and businesses.</p>
                     </div>
                     <div className="footer__links">
                         {['About', 'Projects', 'Pricing', 'Contact'].map(l => (
