@@ -1,78 +1,138 @@
 import '../style/About.css';
 
-const services = [
+const experience = [
     {
-        title: 'Short-Form Editing',
-        desc: 'Crafting scroll-stopping Reels, TikToks, and YouTube Shorts with cinematic pacing, dynamic transitions, and retention-focused hooks.',
-        visual: (
-            <div className="services__visual services__visual--editing">
-                <div className="services__visual-row">
-                    <div className="services__mini-card">
-                        <span className="services__mini-dot" style={{ background: '#ef4444' }} />
-                        Hook Optimization ·
-                        <span className="services__mini-sub">Grab attention in the first 3 seconds with dynamic hooks and pattern interrupts.</span>
-                    </div>
-                    <div className="services__mini-card">
-                        <span className="services__mini-dot" style={{ background: '#22c55e' }} />
-                        Retention Editing ·
-                        <span className="services__mini-sub">Keep viewers watching with pacing, zooms, and beat-synced transitions.</span>
-                    </div>
-                </div>
-            </div>
-        ),
+        company: 'Blockchained Snipers',
+        role: 'Video Editor | Motion Graphics | Graphic Designer',
+        period: 'December 2024 – Present',
+        description:
+            'Creating cinematic short-form and long-form content for clients across multiple platforms. Specializing in Reels, TikToks, and social media ads with dynamic transitions and retention-focused editing.',
+        color: '#22c55e',
+        initials: 'BS',
     },
     {
-        title: 'Color Grading',
-        desc: 'Professional color correction and cinematic grading that sets the mood. Custom LUTs, film-inspired looks, and brand-consistent color palettes.',
-        visual: (
-            <div className="services__visual services__visual--color">
-                <div className="services__color-grid">
-                    <div className="services__color-swatch" style={{ background: 'linear-gradient(135deg, #f97316, #ef4444)' }} />
-                    <div className="services__color-swatch" style={{ background: 'linear-gradient(135deg, #8b5cf6, #6366f1)' }} />
-                    <div className="services__color-swatch" style={{ background: 'linear-gradient(135deg, #06b6d4, #3b82f6)' }} />
-                    <div className="services__color-swatch" style={{ background: 'linear-gradient(135deg, #22c55e, #10b981)' }} />
-                    <div className="services__color-swatch" style={{ background: 'linear-gradient(135deg, #f59e0b, #eab308)' }} />
-                    <div className="services__color-swatch" style={{ background: 'linear-gradient(135deg, #ec4899, #f43f5e)' }} />
-                </div>
-            </div>
-        ),
+        company: '15 International Clients',
+        role: 'Freelance Video Editor',
+        period: 'August 2022 – 2023',
+        description:
+            'Delivering high-quality video edits for international clients, including product videos, faceless YouTube content, and promotional reels.',
+        color: '#2d22c5ff',
+        initials: 'FV',
     },
     {
-        title: 'Motion Graphics',
-        desc: 'Eye-catching animated text, custom transitions, kinetic typography, and visual effects that elevate your content above the competition.',
-        visual: (
-            <div className="services__visual services__visual--motion">
-                <div className="services__motion-grid">
-                    <div className="services__motion-item">
-                        <span className="services__motion-label">Kinetic Typography</span>
-                    </div>
-                    <div className="services__motion-item">
-                        <span className="services__motion-label">Animated Overlays</span>
-                    </div>
-                    <div className="services__motion-item">
-                        <span className="services__motion-label">Smooth Transitions</span>
-                    </div>
-                    <div className="services__motion-item">
-                        <span className="services__motion-label">Custom Effects</span>
-                    </div>
-                </div>
-            </div>
-        ),
+        company: 'Upwork',
+        role: 'Freelance Video Editor',
+        period: 'June 2022 – 2023',
+        description: '',
+        color: '#06d45cff',
+        initials: 'UP',
+    },
+];
+
+const education = [
+    {
+        institution: 'Mindanao State University at Naawan',
+        credential: 'Bachelor of Science in Information Technology',
+        description:
+            'Focused on database systems, software development, and information management, with training in programming, system analysis, and modern technology solutions.',
+        color: '#191970',
+        initials: 'MSU',
+    },
+    {
+        institution: 'Skillshare',
+        credential: 'VIDEO EDITING MASTERCLASS',
+        description:
+            'In-depth course covering cinematic editing, color grading, sound design, and storytelling for short-form and long-form video content.',
+        color: '#ec4899',
+        initials: 'SK',
     },
 ];
 
 export default function About() {
     return (
-        <section id="about" className="services">
-            <div className="services__inner">
-                <div className="services__grid">
-                    {services.map(s => (
-                        <div className="services__card" key={s.title}>
-                            {s.visual}
-                            <h3 className="services__card-title">{s.title}</h3>
-                            <p className="services__card-desc">{s.desc}</p>
-                        </div>
-                    ))}
+        <section id="about" className="about">
+            <div className="about__inner">
+                {/* ── Work Experience ── */}
+                <div className="about__block">
+                    <h2 className="about__heading">Work Experience</h2>
+                    <div className="about__timeline">
+                        {experience.map((item) => (
+                            <div className="about__entry" key={item.company}>
+                                <div className="about__entry-icon" style={{ background: item.color }}>
+                                    {item.initials}
+                                </div>
+                                <div className="about__entry-body">
+                                    <div className="about__entry-header">
+                                        <div>
+                                            <h3 className="about__entry-title">
+                                                {item.company}{' '}
+                                                <svg
+                                                    className="about__entry-arrow"
+                                                    width="12"
+                                                    height="12"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    strokeWidth="2"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                >
+                                                    <path d="M7 17L17 7" />
+                                                    <path d="M7 7h10v10" />
+                                                </svg>
+                                            </h3>
+                                            <span className="about__entry-role">{item.role}</span>
+                                        </div>
+                                        <span className="about__entry-period">{item.period}</span>
+                                    </div>
+                                    {item.description && (
+                                        <p className="about__entry-desc">{item.description}</p>
+                                    )}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* ── Education ── */}
+                <div className="about__block">
+                    <h2 className="about__heading">Education</h2>
+                    <div className="about__timeline">
+                        {education.map((item) => (
+                            <div className="about__entry" key={item.credential}>
+                                <div className="about__entry-icon" style={{ background: item.color }}>
+                                    {item.initials}
+                                </div>
+                                <div className="about__entry-body">
+                                    <div className="about__entry-header">
+                                        <div>
+                                            <h3 className="about__entry-title about__entry-title--credential">
+                                                {item.credential}{' '}
+                                                <svg
+                                                    className="about__entry-arrow"
+                                                    width="12"
+                                                    height="12"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    strokeWidth="2"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                >
+                                                    <path d="M7 17L17 7" />
+                                                    <path d="M7 7h10v10" />
+                                                </svg>
+                                            </h3>
+                                            <span className="about__entry-role">{item.institution}</span>
+                                        </div>
+                                    </div>
+                                    {item.description && (
+                                        <p className="about__entry-desc">{item.description}</p>
+                                    )}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

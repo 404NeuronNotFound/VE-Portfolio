@@ -1,155 +1,158 @@
-.services {
+/* ═══════════════════════════════════════════
+   About — Work Experience & Education
+   ═══════════════════════════════════════════ */
+.about {
     padding: 5rem 2rem;
 }
 
-.services__inner {
+.about__inner {
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
 }
 
-.services__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
+/* ── Section blocks ── */
+.about__block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
 }
 
-.services__card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
-}
-
-.services__card:hover {
-    border-color: var(--border-hover);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-}
-
-.services__card-title {
-    font-size: 1.1rem;
-    font-weight: 700;
+.about__heading {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
     color: var(--text);
-    margin-bottom: 0.5rem;
-    padding: 1.25rem 1.5rem 0;
+    letter-spacing: -0.02em;
 }
 
-.services__card-desc {
-    font-size: 0.875rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    padding: 0 1.5rem 1.5rem;
+/* ── Timeline entries ── */
+.about__timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
 }
 
-/* ── Visual area (top of card) ── */
-.services__visual {
-    padding: 1.5rem;
-    min-height: 200px;
+/* Vertical connector line */
+.about__timeline::before {
+    content: '';
+    position: absolute;
+    left: 22px;
+    top: 48px;
+    bottom: 48px;
+    width: 1px;
+    background: var(--border);
+}
+
+.about__entry {
+    display: flex;
+    gap: 1.25rem;
+    padding: 1.25rem 0;
+    position: relative;
+}
+
+.about__entry+.about__entry {
+    border-top: 1px solid var(--border);
+}
+
+/* ── Icon avatar ── */
+.about__entry-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid var(--border);
-    background: var(--surface);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.02em;
     position: relative;
-    overflow: hidden;
+    z-index: 1;
 }
 
-/* ── Editing visual: mini cards ── */
-.services__visual--editing {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.75rem;
+/* ── Entry body ── */
+.about__entry-body {
+    flex: 1;
+    min-width: 0;
 }
 
-.services__visual-row {
+.about__entry-header {
     display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-}
-
-.services__mini-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 0.75rem 1rem;
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--text);
-    display: flex;
+    justify-content: space-between;
     align-items: flex-start;
-    gap: 0.5rem;
-    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.about__entry-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
     line-height: 1.4;
 }
 
-.services__mini-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    margin-top: 3px;
+.about__entry-title--credential {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
 }
 
-.services__mini-sub {
-    display: block;
-    width: 100%;
-    font-weight: 400;
+.about__entry-arrow {
     color: var(--text-muted);
-    font-size: 0.72rem;
+    transition: color 0.2s, transform 0.2s;
+    flex-shrink: 0;
+}
+
+.about__entry:hover .about__entry-arrow {
+    color: var(--text);
+    transform: translate(2px, -2px);
+}
+
+.about__entry-role {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    margin-top: 0.1rem;
+}
+
+.about__entry-period {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    flex-shrink: 0;
     margin-top: 0.15rem;
 }
 
-/* ── Color visual: swatch grid ── */
-.services__color-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.6rem;
-    width: 100%;
-}
-
-.services__color-swatch {
-    aspect-ratio: 1;
-    border-radius: 12px;
-    transition: transform 0.3s;
-}
-
-.services__color-swatch:hover {
-    transform: scale(1.08);
-}
-
-/* ── Motion visual: label grid ── */
-.services__motion-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-    width: 100%;
-}
-
-.services__motion-item {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1rem 0.75rem;
-    text-align: center;
-    transition: border-color 0.3s;
-}
-
-.services__motion-item:hover {
-    border-color: var(--border-hover);
-}
-
-.services__motion-label {
-    font-size: 0.72rem;
-    font-weight: 600;
+.about__entry-desc {
+    font-size: 0.85rem;
     color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+    line-height: 1.7;
+    margin-top: 0.6rem;
+    max-width: 600px;
 }
 
-@media (max-width: 900px) {
-    .services__grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .about {
+        padding: 3.5rem 1.5rem;
+    }
+
+    .about__entry-header {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .about__entry-period {
+        font-size: 0.75rem;
+    }
+
+    .about__timeline::before {
+        display: none;
     }
 }
