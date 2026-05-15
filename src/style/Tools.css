@@ -56,6 +56,19 @@
     to { transform: translateX(0); }
 }
 
+/* Stagger rows so they don't all start aligned */
+.tools__rows > :nth-child(2) .tools__track {
+    animation-delay: -15s;
+}
+
+.tools__rows > :nth-child(3) .tools__track {
+    animation-delay: -8s;
+}
+
+.tools__rows > :nth-child(4) .tools__track {
+    animation-delay: -22s;
+}
+
 /* ── Tool card ── */
 .tools__card {
     display: flex;
