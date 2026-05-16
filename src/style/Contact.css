@@ -137,6 +137,30 @@
     box-shadow: 0 0 0 3px rgba(113, 113, 122, 0.15);
 }
 
+.contact__input--error {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+}
+
+.contact__field-error {
+    font-size: 0.76rem;
+    color: #ef4444;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    animation: field-err-in 0.2s ease;
+}
+
+.contact__field-error::before {
+    content: '⚠';
+    font-size: 0.7rem;
+}
+
+@keyframes field-err-in {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
 .contact__select {
     cursor: pointer;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4L6 8L10 4' stroke='%2371717a' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
@@ -192,6 +216,47 @@
     font-size: 0.875rem;
     color: #22c55e;
     text-align: center;
+}
+
+/* ── Honeypot (visually hidden, off-screen — not display:none so bots don't skip it) ── */
+.contact__honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ── reCAPTCHA wrapper ── */
+.contact__recaptcha-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Scale down the reCAPTCHA widget on very small screens */
+@media (max-width: 360px) {
+    .contact__recaptcha-wrap iframe {
+        transform: scale(0.88);
+        transform-origin: left top;
+    }
+}
+
+.contact__captcha-msg {
+    font-size: 0.8rem;
+    color: #ef4444;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.contact__captcha-msg::before {
+    content: '⚠';
+    font-size: 0.7rem;
 }
 
 /* ── Responsive ── */
