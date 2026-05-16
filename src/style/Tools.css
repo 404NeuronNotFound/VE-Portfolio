@@ -104,6 +104,14 @@
     height: 28px;
 }
 
+/* ── SVG file icons (CapCut, Alight Motion) ── */
+.tools__card-img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    opacity: 0.8;
+}
+
 .tools__card-name {
     font-size: 0.95rem;
     font-weight: 500;
