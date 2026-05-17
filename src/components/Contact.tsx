@@ -13,7 +13,7 @@ const PUBLIC_KEY = 'aAV_enHD0H7_WAdRG';
 // ─── reCAPTCHA site key ───────────────────────────────────────────────────────
 // Get yours at https://www.google.com/recaptcha/admin → v2 "I'm not a robot"
 // Add localhost + your production domain to the allowed-domains list.
-const RECAPTCHA_SITE_KEY = '6LdrdewsAAAAAFhyGTs0H4nFj8Pv5UXO_O-_LPhq';
+const RECAPTCHA_SITE_KEY = '6LcLBO4sAAAAALyinobwkGgCwnFXqgAT5rZWAc8H';
 // ─────────────────────────────────────────────────────────────────────────────
 
 // ─── Rate-limit helpers (max 3 submissions per hour, stored in localStorage) ──
