@@ -4,7 +4,7 @@ interface Project {
     id: number;
     title: string;
     description: string;
-    videoUrl: string;
+    youtubeId: string; // YouTube video ID from: youtube.com/watch?v=THIS_PART
     features: string[];
     tools: string[];
 }
@@ -12,7 +12,7 @@ interface Project {
 interface Short {
     id: number;
     title: string;
-    videoUrl: string;
+    youtubeId: string; // YouTube Shorts ID from: youtube.com/shorts/THIS_PART
     tools: string[];
 }
 
@@ -21,7 +21,7 @@ const projects: Project[] = [
         id: 1,
         title: 'Iman Gadzhi Animation Style',
         description: 'A cinematic animation edit inspired by Iman Gadzhi’s style, featuring smooth motion design, dynamic typography, engaging transitions, and premium visual storytelling.',
-        videoUrl: 'public/videos/Iman Gadzhi Style 1.mp4',
+        youtubeId: 'vYM2uwmwef0', // e.g. 'dQw4w9WgXcQ'
         features: [
             'Cinematic motion graphics and smooth animations',
             'Dynamic typography with engaging visual flow',
@@ -34,7 +34,7 @@ const projects: Project[] = [
         id: 2,
         title: 'MagnatesMedia Documentary Style',
         description: 'A documentary-style edit inspired by MagnatesMedia, combining cinematic storytelling, dramatic pacing, immersive visuals, and engaging motion graphics to deliver a premium viewing experience.',
-        videoUrl: 'public/videos/MagnatesMedia Style 2.mp4',
+        youtubeId: '5FLVq6JBIJ0',
         features: [
             'Documentary-style storytelling with cinematic pacing',
             'High-quality motion graphics and visual breakdowns',
@@ -47,7 +47,7 @@ const projects: Project[] = [
         id: 3,
         title: 'Iman Gadzhi Animation Style (Alternate Edit)',
         description: 'A cinematic animation edit inspired by Iman Gadzhi’s style, featuring smooth motion design, dynamic typography, engaging transitions, and premium visual storytelling.',
-        videoUrl: 'public/videos/Iman Gadzhi Style 2.mp4',
+        youtubeId: '0A88TbYYuV8',
         features: [
             'Fast-paced cinematic editing with smooth transitions',
             'Dynamic motion graphics and animated typography',
@@ -60,7 +60,7 @@ const projects: Project[] = [
         id: 4,
         title: 'MagnatesMedia Documentary Style (Alternate Edit)',
         description: 'A cinematic documentary-style edit inspired by MagnatesMedia, designed to deliver strong narrative impact through storytelling, visuals, and sound-driven pacing.',
-        videoUrl: 'public/videos/MagnateMedia Style 3.mp4',
+        youtubeId: 'CwGqEUWr_z0',
         features: [
             'Strong narrative-driven storytelling with hook-based structure',
             'Cinematic pacing with tension-building scene progression',
@@ -73,7 +73,7 @@ const projects: Project[] = [
         id: 5,
         title: 'Findify Motion Ad (Lost & Found System)',
         description: 'A simple motion ad for Findify, a lost and found management system, designed to clearly explain the platform’s purpose and encourage user engagement through clean visuals and smooth transitions.',
-        videoUrl: 'public/videos/Findify Ads.mp4',
+        youtubeId: '-qvNfzmLQyc',
         features: [
             'Clean motion design focused on product explanation',
             'Simple UI showcase animation of the Findify platform',
@@ -81,70 +81,20 @@ const projects: Project[] = [
             'Clear problem-solution storytelling for lost and found use case',
         ],
         tools: ['CapCut', 'Canva', 'Gemini', 'Swish'],
-    }
+    },
 ];
 
 const shorts: Short[] = [
-    {
-        id: 1,
-        title: 'Crypto Trading Hook',
-        videoUrl: 'public/videos/shorts/Editing Style 8.mp4',
-        tools: ['CapCut', 'Canva'],
-    },
-    {
-        id: 2,
-        title: 'Documentary Style Reel',
-        videoUrl: 'public/videos/shorts/Editing Style 1.mp4',
-        tools: ['Premiere Pro', 'After Effects'],
-    },
-    {
-        id: 3,
-        title: 'Documentary Style Reel',
-        videoUrl: 'public/videos/shorts/Editing Style 2.mp4',
-        tools: ['CapCut', 'Alight Motion'],
-    },
-    {
-        id: 4,
-        title: 'Motivational Quote Edit',
-        videoUrl: 'public/videos/shorts/S4 My Content 2.mp4',
-        tools: ['CapCut', 'Canva'],
-    },
-    {
-        id: 5,
-        title: 'Podcast Highlight Clip',
-        videoUrl: 'public/videos/shorts/S4 My Content 11.mp4',
-        tools: ['Premiere Pro', 'DaVinci Resolve'],
-    },
-    {
-        id: 6,
-        title: 'Faceless Editing Style',
-        videoUrl: 'public/videos/shorts/Editing Style 7.mp4',
-        tools: ['CapCut', 'Lightroom'],
-    },
-    {
-        id: 7,
-        title: 'Faceless Content',
-        videoUrl: 'public/videos/shorts/Editing Style 11.mp4',
-        tools: ['After Effects', 'Photoshop'],
-    },
-    {
-        id: 8,
-        title: 'Faceless Content',
-        videoUrl: 'public/videos/shorts/S2 My 5.mp4',
-        tools: ['CapCut', 'Figma'],
-    },
-    {
-        id: 9,
-        title: 'Instagram Reel Content',
-        videoUrl: 'public/videos/shorts/New Editing Style 2.mp4',
-        tools: ['Premiere Pro', 'After Effects'],
-    },
-    {
-        id: 10,
-        title: 'Instagram Reel Content',
-        videoUrl: 'public/videos/shorts/New Editing Style 3.mp4',
-        tools: ['Premiere Pro', 'After Effects'],
-    },
+    { id: 1, title: 'Crypto Trading Hook', youtubeId: 'DU-04TUj8CI', tools: ['CapCut', 'Canva'] },
+    { id: 2, title: 'Documentary Style Reel', youtubeId: 'eFg8CnVTLKA', tools: ['Premiere Pro', 'After Effects'] },
+    { id: 3, title: 'Documentary Style Reel', youtubeId: 'OsjvcN7Q9Ig', tools: ['CapCut', 'Alight Motion'] },
+    { id: 4, title: 'Motivational Quote Edit', youtubeId: 'OX0MnMCmGOw', tools: ['CapCut', 'Canva'] },
+    { id: 5, title: 'Podcast Highlight Clip', youtubeId: 'QrD5091o3nM', tools: ['Premiere Pro', 'DaVinci Resolve'] },
+    { id: 6, title: 'Faceless Editing Style', youtubeId: '63yHtgYefZs', tools: ['CapCut', 'Lightroom'] },
+    { id: 7, title: 'Faceless Content', youtubeId: 'OEqgcdqMinY', tools: ['After Effects', 'Photoshop'] },
+    { id: 8, title: 'Faceless Content', youtubeId: '8qOMlOE4epQ', tools: ['CapCut', 'Figma'] },
+    { id: 9, title: 'Instagram Reel Content', youtubeId: '18vnCFR7ZOc', tools: ['Premiere Pro', 'After Effects'] },
+    { id: 10, title: 'Instagram Reel Content', youtubeId: 'XbD9fGH0aCM', tools: ['Premiere Pro', 'After Effects'] },
 ];
 
 export default function Work() {
@@ -159,13 +109,13 @@ export default function Work() {
                     {projects.map((p) => (
                         <div className="projects__card" key={p.id}>
                             <div className="projects__card-media">
-                                <video
-                                    src={p.videoUrl}
-                                    loop
-                                    muted
-                                    autoPlay
-                                    playsInline
+                                <iframe
+                                    src={`https://www.youtube.com/embed/${p.youtubeId}?autoplay=1&mute=1&loop=1&playlist=${p.youtubeId}&controls=1&rel=0&modestbranding=1`}
+                                    title={p.title}
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
                                     className="projects__card-video"
+                                    loading="lazy"
                                 />
                             </div>
                             <div className="projects__card-details">
@@ -188,7 +138,7 @@ export default function Work() {
                                 </div>
 
                                 <div className="projects__card-actions">
-                                    <a href={p.videoUrl} target="_blank" rel="noopener noreferrer" className="projects__btn projects__btn--primary">
+                                    <a href={`https://www.youtube.com/watch?v=${p.youtubeId}`} target="_blank" rel="noopener noreferrer" className="projects__btn projects__btn--primary">
                                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                                             <polyline points="15 3 21 3 21 9" />
@@ -212,21 +162,14 @@ export default function Work() {
                     {shorts.map((s) => (
                         <div className="projects__short-card" key={s.id}>
                             <div className="projects__short-media">
-                                <video
-                                    src={s.videoUrl}
-                                    loop
-                                    muted
-                                    autoPlay
-                                    playsInline
+                                <iframe
+                                    src={`https://www.youtube.com/embed/${s.youtubeId}?autoplay=1&mute=1&loop=1&playlist=${s.youtubeId}&controls=0&rel=0&modestbranding=1`}
+                                    title={s.title}
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
                                     className="projects__short-video"
+                                    loading="lazy"
                                 />
-                                <div className="projects__short-overlay">
-                                    <span className="projects__short-play">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                            <polygon points="6,3 20,12 6,21" />
-                                        </svg>
-                                    </span>
-                                </div>
                             </div>
                             <div className="projects__short-info">
                                 <h4 className="projects__short-name">{s.title}</h4>
