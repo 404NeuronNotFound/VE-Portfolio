@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import type { FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { useTheme } from '../context/ThemeContext';
 import '../style/Contact.css';
 
 // ─── EmailJS credentials ──────────────────────────────────────────────────────
@@ -51,6 +52,7 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const MIN_FORM_TIME_MS = 3000; // must spend ≥ 3 s on the form
 
 export default function Contact() {
+    const { theme } = useTheme();
     const [form, setForm] = useState({ name: '', email: '', service: '', message: '' });
     const [status, setStatus] = useState<Status>('idle');
     const [errors, setErrors] = useState<Errors>({});
@@ -277,7 +279,7 @@ export default function Contact() {
                             <ReCAPTCHA
                                 ref={recaptchaRef}
                                 sitekey={RECAPTCHA_SITE_KEY}
-                                theme="dark"
+                                theme={theme}
                                 onChange={(token) => {
                                     setCaptchaToken(token);
                                     setCaptchaError(false);
