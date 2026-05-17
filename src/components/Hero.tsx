@@ -1,9 +1,6 @@
 import '../style/Hero.css';
 
 export default function Hero() {
-    const scrollTo = (id: string) =>
-        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-
     return (
         <section className="hero">
             <div className="hero__content">
